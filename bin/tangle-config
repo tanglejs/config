@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+path = require('path');
+
+exports.command = {
+  description: 'Configure your tangle environment',
+  arguments: '-k ns:key [-v value] [-f path]'
+};
+
+if (require.main === module) {
+  require(path.join(__dirname, '..', 'index.js')).command();
+}

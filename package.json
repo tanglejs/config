@@ -1,0 +1,62 @@
+{
+  "name": "tangle-config",
+  "version": "0.0.0",
+  "description": "Configuration manager for tangle",
+  "main": "index.js",
+  "directories": {
+    "man": "man",
+    "doc": "readme"
+  },
+  "bin": {
+    "tangle-config": "./bin/tangle-config"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "preferGlobal": true,
+  "author": {
+    "name": "Logan Koester",
+    "email": "logan@logankoester.com",
+    "url": "http://logankoester.com"
+  },
+  "dependencies": {
+    "nopt": "~2.1.2",
+    "nconf": "~0.6.8",
+    "editor": "0.0.5"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-bump": "0.0.11",
+    "nixt": "0.0.1",
+    "grunt-contrib-nodeunit": "~0.2.2",
+    "grunt-readme-generator": "~0.3.41",
+    "marked-man": "0.0.2",
+    "marked": "~0.2.10",
+    "grunt-contrib-copy": "~0.4.1"
+  },
+  "keywords": [
+    "tangle",
+    "tangle-plugin"
+  ],
+  "homepage": "https://github.com/tanglejs/config",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tanglejs/config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tanglejs/config/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/tanglejs/config/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.10.0",
+    "npm": ">=1.2.10"
+  }
+}
