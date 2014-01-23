@@ -43,6 +43,9 @@
     },
     'Getting a default value in a script': function(test) {
       process.env['tangle_config'] = configFile;
+      console.log('---------configfile');
+      console.log(configFile);
+      console.log('---------configfile');
       test.expect(1);
       test.equals('default_value', config.getConf().get('test:get_default_value'));
       return test.done();

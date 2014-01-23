@@ -1,0 +1,6 @@
+{
+  "test": {
+    "get_default_value": "default_value"
+  },
+  "foo": "baz"
+}
