@@ -13,7 +13,6 @@
   "scripts": {
     "test": "grunt test"
   },
-  "preferGlobal": true,
   "author": {
     "name": "Logan Koester",
     "email": "logan@logankoester.com",
