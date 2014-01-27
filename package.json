@@ -1,6 +1,6 @@
 {
   "name": "tangle-config",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Configuration manager for tangle",
   "main": "index.js",
   "directories": {
