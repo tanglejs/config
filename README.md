@@ -2,7 +2,7 @@
 
 > Configuration management for tangle
 
-[![Strider Build Status](https://ci.ldk.io/tanglejs/config/badge)](https://ci.ldk.io/tanglejs/config/)
+[![Strider Build Status](http://ci.ldk.io/tanglejs/config/badge)](https://ci.ldk.io/tanglejs/config/)
 [![Travis Build Status](https://secure.travis-ci.org/tanglejs/config.png?branch=master)](http://travis-ci.org/tanglejs/config)
 [![Dependency Status](https://david-dm.org/tanglejs/config.png)](https://david-dm.org/tanglejs/config)
 [![devDependency Status](https://david-dm.org/tanglejs/config/dev-status.png)](https://david-dm.org/tanglejs/config#info=devDependencies)
