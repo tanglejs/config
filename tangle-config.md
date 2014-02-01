@@ -11,7 +11,7 @@
     --value, -v [String] - Save a new value to the specified key.
 
     --file, -f [Path] - Explicitely specify the configFile to operate on. If
-                        not set, $HOME/.freshbooks will be used.
+                        not set, $HOME/.tangle will be used.
 
     --edit, -e - Manually edit configuration with $EDITOR
 
@@ -21,12 +21,12 @@
 ## Examples
 
     # Set your Github username
-    $ freshbooks-config -k github:username -v 'yourname'
+    $ tangle-config -k github:username -v 'yourname'
 
     # Print the current Github username to STDOUT
-    $ freshbooks-config -k github:username
+    $ tangle-config -k github:username
 
     # Edit configuration using a text editor
-    $ freshbooks-config --edit
+    $ tangle-config --edit
 
 

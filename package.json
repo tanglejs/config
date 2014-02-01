@@ -21,20 +21,20 @@
   "dependencies": {
     "nopt": "~2.1.2",
     "nconf": "~0.6.8",
-    "editor": "0.0.5"
+    "editor": "~0.1.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-contrib-coffee": "~0.9.0",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt-bump": "0.0.11",
-    "nixt": "0.0.1",
-    "grunt-contrib-nodeunit": "~0.2.2",
+    "grunt-bump": "0.0.13",
+    "nixt": "~0.3.0",
+    "grunt-contrib-nodeunit": "~0.3.0",
     "grunt-readme-generator": "~0.3.41",
-    "marked-man": "0.0.2",
-    "marked": "~0.2.10",
-    "grunt-contrib-copy": "~0.4.1"
+    "marked-man": "~0.1.1",
+    "marked": "~0.3.1",
+    "grunt-contrib-copy": "~0.5.0"
   },
   "keywords": [
     "tangle",
