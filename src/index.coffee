@@ -13,6 +13,16 @@ exports.configFile = ->
     process.env['HOME'], '.tangle'
   )
 
+exports.projectFile = ->
+  local = path.join(process.cwd(), 'tangle.json')
+  fs.existsSync local || false
+
+exports.getProject = ->
+  nconf
+    .argv
+    .env
+    .file exports.projectFile()
+
 exports.getConf = ->
   nconf
     .file(exports.configFile())

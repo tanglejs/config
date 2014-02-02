@@ -19,6 +19,16 @@
     return process.env['tangle_config'] || path.join(process.env['HOME'], '.tangle');
   };
 
+  exports.projectFile = function() {
+    var local;
+    local = path.join(process.cwd(), 'tangle.json');
+    return fs.existsSync(local || false);
+  };
+
+  exports.getProject = function() {
+    return nconf.argv.env.file(exports.projectFile());
+  };
+
   exports.getConf = function() {
     return nconf.file(exports.configFile()).env().defaults(exports.DEFAULTS);
   };

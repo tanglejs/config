@@ -34,6 +34,11 @@ exports.group =
     test.equals 'default_value', config.getConf().get('test:get_default_value')
     test.done()
 
+  'projectFile in a script': (test) ->
+    test.expect(1)
+    test.equals false, config.projectFile()
+    test.done()
+
   'No options': (test) ->
     test.doesNotThrow ->
       nixt()
