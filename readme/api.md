@@ -36,9 +36,8 @@ You can use project files to store non-global configuration in a file called
 ```coffee
 config = require 'tangle-config'
 
-# Get a `tangle.json` file in the current working directory (or false if
-# the file does not exist)
-config.projectFile()
+# Get a `tangle.json` file in the current working directory
+projectFile = config.projectFile()
 
 # Retrieving the nconf object
 project = config.getProject()
@@ -51,6 +50,6 @@ project.set 'namespace:key', value
 
 # Saving the file
 project.save (err) ->
-  fs.readFile configFile, (err, data) -> console.error err if err
+  fs.readFile projectFile, (err, data) -> console.error err if err
 
 ```

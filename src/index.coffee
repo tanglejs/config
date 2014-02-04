@@ -15,12 +15,11 @@ exports.configFile = ->
 
 exports.projectFile = ->
   local = path.join(process.cwd(), 'tangle.json')
-  fs.existsSync local || false
 
 exports.getProject = ->
   nconf
-    .argv
-    .env
+    .argv()
+    .env()
     .file exports.projectFile()
 
 exports.getConf = ->

@@ -47,11 +47,6 @@
       test.equals('default_value', config.getConf().get('test:get_default_value'));
       return test.done();
     },
-    'projectFile in a script': function(test) {
-      test.expect(1);
-      test.equals(false, config.projectFile());
-      return test.done();
-    },
     'No options': function(test) {
       return test.doesNotThrow(function() {
         return nixt().expect(showHelp).run('bin/tangle-config').code(0).end(test.done);

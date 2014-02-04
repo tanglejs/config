@@ -21,12 +21,11 @@
 
   exports.projectFile = function() {
     var local;
-    local = path.join(process.cwd(), 'tangle.json');
-    return fs.existsSync(local || false);
+    return local = path.join(process.cwd(), 'tangle.json');
   };
 
   exports.getProject = function() {
-    return nconf.argv.env.file(exports.projectFile());
+    return nconf.argv().env().file(exports.projectFile());
   };
 
   exports.getConf = function() {
