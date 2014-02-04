@@ -2,6 +2,7 @@ nixt = require 'nixt'
 path = require 'path'
 configFile = path.join(__dirname, 'config_file')
 config = require '../index'
+fs = require 'fs'
 
 showHelp = (result) ->
   if !(result.stdout.match(/--key/))
@@ -67,3 +68,21 @@ exports.group =
         .stdout('baz')
         .code(0)
         .end(test.done)
+
+  'Writing to a project config file': (test) ->
+    test.expect 1
+    projectConfig = config.getProject()
+    projectConfig.set 'project:name', 'foo'
+    projectConfig.save (err) ->
+      fs.readFile config.projectFile(), encoding: 'utf8', (err, data) ->
+        console.error err if err
+        test.ok (data.match /foo/), 'file should contain the written data'
+        test.done()
+
+  'Reading from a project config file': (test) ->
+    test.expect 1
+    projectConfig = config.getProject()
+    test.equal 'foo', projectConfig.get 'project:name'
+    fs.unlink config.projectFile(), (err) ->
+      console.error err if err
+      test.done()

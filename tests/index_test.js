@@ -1,5 +1,5 @@
 (function() {
-  var config, configFile, nixt, path, showHelp;
+  var config, configFile, fs, nixt, path, showHelp;
 
   nixt = require('nixt');
 
@@ -8,6 +8,8 @@
   configFile = path.join(__dirname, 'config_file');
 
   config = require('../index');
+
+  fs = require('fs');
 
   showHelp = function(result) {
     if (!(result.stdout.match(/--key/))) {
@@ -65,6 +67,35 @@
     'Getting a value': function(test) {
       return test.doesNotThrow(function() {
         return nixt().exec("bin/tangle-config -k foo -v baz -f " + configFile).run("bin/tangle-config -k foo -f " + configFile).stdout('baz').code(0).end(test.done);
+      });
+    },
+    'Writing to a project config file': function(test) {
+      var projectConfig;
+      test.expect(1);
+      projectConfig = config.getProject();
+      projectConfig.set('project:name', 'foo');
+      return projectConfig.save(function(err) {
+        return fs.readFile(config.projectFile(), {
+          encoding: 'utf8'
+        }, function(err, data) {
+          if (err) {
+            console.error(err);
+          }
+          test.ok(data.match(/foo/), 'file should contain the written data');
+          return test.done();
+        });
+      });
+    },
+    'Reading from a project config file': function(test) {
+      var projectConfig;
+      test.expect(1);
+      projectConfig = config.getProject();
+      test.equal('foo', projectConfig.get('project:name'));
+      return fs.unlink(config.projectFile(), function(err) {
+        if (err) {
+          console.error(err);
+        }
+        return test.done();
       });
     }
   };
