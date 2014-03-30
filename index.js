@@ -1,5 +1,5 @@
 (function() {
-  var editor, exec, fs, nconf, nopt, path;
+  var editor, exec, fs, manPath, nconf, nopt, path, tangleUtil;
 
   fs = require('fs');
 
@@ -14,6 +14,10 @@
   editor = require('editor');
 
   exports.defaults = {};
+
+  tangleUtil = require('tangle-util');
+
+  manPath = path.join(__dirname, 'man', 'tangle-config.1');
 
   exports.configFile = function() {
     return process.env['tangle_config'] || path.join(process.env['HOME'], '.tangle');
@@ -33,19 +37,7 @@
   };
 
   exports.command = function() {
-    var configFile, displayHelp, parsedOptions, value;
-    displayHelp = function() {
-      var cmd, manpage;
-      manpage = path.join(__dirname, 'man', 'tangle-config.1');
-      cmd = "man --local-file " + manpage;
-      return exec(cmd, function(err, stdout, stderr) {
-        process.stdout.write("" + stdout);
-        process.stderr.write("" + stderr);
-        if (err) {
-          return console.error(err);
-        }
-      });
-    };
+    var configFile, parsedOptions, value;
     parsedOptions = nopt({
       key: String,
       value: String,
@@ -64,7 +56,7 @@
       file: configFile
     });
     if (parsedOptions.help) {
-      return displayHelp();
+      return tangleUtil.help.showLocalMan(manPath);
     } else if (parsedOptions.value) {
       nconf.set(parsedOptions.key, parsedOptions.value);
       return nconf.save(function(err) {
@@ -80,7 +72,7 @@
     } else if (parsedOptions.edit) {
       return editor(configFile);
     } else {
-      return displayHelp();
+      return tangleUtil.help.showLocalMan(manPath);
     }
   };
 

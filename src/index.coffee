@@ -8,6 +8,9 @@ editor = require 'editor'
 # Default configuration settings
 exports.defaults = {}
 
+tangleUtil = require 'tangle-util'
+manPath = path.join __dirname, 'man', 'tangle-config.1'
+
 exports.configFile = ->
   process.env['tangle_config'] || path.join(
     process.env['HOME'], '.tangle'
@@ -29,14 +32,6 @@ exports.getConf = ->
     .defaults(exports.DEFAULTS)
 
 exports.command = ->
-  displayHelp = ->
-    manpage = path.join(__dirname, 'man', 'tangle-config.1')
-    cmd = "man --local-file #{manpage}"
-    exec cmd, (err, stdout, stderr) ->
-      process.stdout.write "#{stdout}"
-      process.stderr.write "#{stderr}"
-      console.error err if err
-
   parsedOptions = nopt
     key: String
     value: String
@@ -58,7 +53,8 @@ exports.command = ->
   nconf.file file: configFile
 
   if parsedOptions.help
-    displayHelp()
+    tangleUtil.help.showLocalMan(manPath)
+
 
   else if parsedOptions.value
     nconf.set parsedOptions.key, parsedOptions.value
@@ -73,4 +69,4 @@ exports.command = ->
     editor configFile
 
   else
-    displayHelp()
+    tangleUtil.help.showLocalMan(manPath)
