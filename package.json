@@ -2,13 +2,9 @@
   "name": "tangle-config",
   "version": "0.1.1",
   "description": "Configuration manager for tangle",
-  "main": "index.js",
+  "main": "index.coffee",
   "directories": {
-    "man": "man",
     "doc": "readme"
-  },
-  "bin": {
-    "tangle-config": "./bin/tangle-config"
   },
   "scripts": {
     "test": "grunt test"
@@ -19,28 +15,18 @@
     "url": "http://logankoester.com"
   },
   "dependencies": {
-    "nopt": "~2.1.2",
     "nconf": "~0.6.8",
     "editor": "~0.1.0",
-    "tangle-util": "~0.1.0"
+    "tangle-util": "*"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-coffee": "~0.9.0",
-    "grunt-contrib-clean": "~0.5.0",
+    "grunt": "~0.4.5",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt-bump": "0.0.13",
+    "grunt-bump": "0.0.14",
     "nixt": "~0.3.0",
     "grunt-contrib-nodeunit": "~0.3.0",
-    "grunt-readme-generator": "~0.3.41",
-    "marked-man": "~0.1.1",
-    "marked": "~0.3.1",
-    "grunt-contrib-copy": "~0.5.0"
+    "grunt-readme-generator": "~0.3.41"
   },
-  "keywords": [
-    "tangle",
-    "tangle-plugin"
-  ],
   "homepage": "https://github.com/tanglejs/config",
   "repository": {
     "type": "git",
@@ -56,7 +42,6 @@
     }
   ],
   "engines": {
-    "node": ">= 0.10.0",
-    "npm": ">=1.2.10"
+    "node": ">= 0.10.0"
   }
 }
