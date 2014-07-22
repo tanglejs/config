@@ -7,7 +7,7 @@
     "doc": "readme"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "mocha"
   },
   "author": {
     "name": "Logan Koester",
@@ -16,18 +16,21 @@
   },
   "dependencies": {
     "editor": "~0.1.0",
+    "fs-extra": "^0.10.0",
     "nconf": "~0.6.8",
     "pwuid": "^0.1.0",
     "q": "^1.0.1",
     "tangle-util": "*"
   },
   "devDependencies": {
+    "chai": "^1.9.1",
+    "chai-fs": "0.0.3",
+    "coffee-script": "^1.7.1",
     "grunt": "~0.4.5",
-    "grunt-contrib-watch": "~0.5.3",
     "grunt-bump": "0.0.14",
-    "nixt": "~0.3.0",
-    "grunt-contrib-nodeunit": "~0.3.0",
-    "grunt-readme-generator": "~0.3.41"
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-readme-generator": "~0.3.41",
+    "mocha": "^1.20.1"
   },
   "homepage": "https://github.com/tanglejs/config",
   "repository": {

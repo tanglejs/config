@@ -1,0 +1,7 @@
+{
+  "name": "example-app",
+  "type": "app",
+  "modules": {
+    "core": "modules/core/index"
+  }
+}

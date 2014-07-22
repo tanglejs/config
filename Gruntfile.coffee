@@ -23,9 +23,6 @@ module.exports = (grunt) ->
         ]
         tasks: ['default']
 
-    nodeunit:
-      all: ['tests/**/*_test.coffee']
-
     readme_generator:
       help:
         options:
@@ -66,10 +63,8 @@ module.exports = (grunt) ->
 
   # These plugins provide necessary tasks.
   grunt.loadNpmTasks 'grunt-contrib-watch'
-  grunt.loadNpmTasks 'grunt-contrib-nodeunit'
   grunt.loadNpmTasks 'grunt-readme-generator'
   grunt.loadNpmTasks 'grunt-bump'
 
   grunt.registerTask 'build', ['readme_generator']
-  grunt.registerTask 'test', ['nodeunit']
-  grunt.registerTask 'default', ['build', 'test']
+  grunt.registerTask 'default', ['build']

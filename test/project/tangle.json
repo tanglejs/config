@@ -1,0 +1,6 @@
+{
+  "name": "example-project",
+  "type": "project",
+  "version": "1.0.0",
+  "environment": "development"
+}

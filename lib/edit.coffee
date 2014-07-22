@@ -12,7 +12,6 @@ module.exports = (params, shell) ->
       if shell.isShell
         shell.interface().resume()
         config.load ->
-          console.log 'loaded'
           deferred.resolve()
       else
         deferred.resolve()
