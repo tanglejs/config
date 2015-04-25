@@ -4,7 +4,7 @@ dirname = path.dirname
 fs = require 'fs-extra'
 exists = fs.existsSync
 
-pwuid = require 'pwuid'
+passwdUser = require 'passwd-user'
 nconf = require 'nconf'
 
 defaultParentPath = (nconf) ->
@@ -49,7 +49,7 @@ load = (dir) ->
 
   nconf.add 'global',
     type: 'file'
-    file: path.join pwuid().dir, '.tangle'
+    file: path.join passwdUser.sync(process.getuid()).homedir, '.tangle'
 
   if parentPath = defaultParentPath nconf
     nconf.defaults

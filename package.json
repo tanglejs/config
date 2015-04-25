@@ -18,7 +18,7 @@
     "editor": "~0.1.0",
     "fs-extra": "^0.10.0",
     "nconf": "~0.6.8",
-    "pwuid": "^0.1.0",
+    "passwd-user": "^1.1.1",
     "q": "^1.0.1",
     "tangle-util": "*"
   },
